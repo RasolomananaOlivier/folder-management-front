@@ -1,12 +1,14 @@
+import RootLayout from "@/layouts/RootLayout";
 import { Route, Routes as ReactRoutes, useLocation } from "react-router-dom";
-import Home from "./Home";
 
 const Routes = () => {
   const location = useLocation();
 
   return (
     <ReactRoutes location={location} key={location.key}>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<RootLayout />}>
+        <Route path="/" element={<div>Test</div>} />
+      </Route>
     </ReactRoutes>
   );
 };
